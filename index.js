@@ -21,14 +21,21 @@ function destructivelyRemoveFirstKitten() {
 }
 
 function appendKitten(name) {
-  var newKit = kittens.splice(kittens.length - 1, 0, name);
-  return newKit
+  var newKit = [...kittens, name];
+  return newKit;
 }
 
 function prependKitten(name) {
-  var newKit = kittens.splice(0, 0, name);
+  var newKit = [name, ...kittens];
+  return newKit;
 }
 
 function removeLastKitten() {
-  var newKit = kittens.slice
+  var newKit = kittens.slice(-1);
+  return newKit;
+}
+
+function removeFirstKitten() {
+  var newKit = kittens.slice(1);
+  return newKit;
 }
